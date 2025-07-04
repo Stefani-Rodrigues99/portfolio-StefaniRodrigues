@@ -1,0 +1,220 @@
+ 
+/*paleta de cores base do trabalho*/
+:root {
+      --preto: #0e0e0e;
+      --rosa: #ff69b4;
+      --roxo: #9b59b6;
+      --lilas: #e0b3ff;
+      --branco: #ffffff;
+      --cinza: #cccccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--preto);
+      color: var(--branco);
+      min-height: 1300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--preto);
+      border-bottom: 1px solid var(--rosa);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+      footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #111;
+      color: #aaa;
+      border-top: 1px solid var(--roxo);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+      color: var(--rosa);
+      border: 2px solid var(--rosa);
+      padding: 4px 10px;
+      transition-delay: 0.2s;
+    }
+
+    .logo:hover{
+        color: var(--branco);
+        background-color: var(--rosa);
+        }
+/*navegação horizontal*/
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--cinza);
+      font-weight: 500;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: var(--rosa);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      transition: all 0.3s ease-in-out;
+    }
+/*título com transição*/
+    .intro-text h1 {
+      font-size: 48px;
+      color: var(--rosa);
+      margin-bottom: 10px;
+      transition: color 0.4s ease;
+      
+    }
+
+    .intro-text p {
+      font-size: 20px;
+      text-align: justify;
+      color: var(--cinza);
+    }
+    
+   .intro-text h1 span {
+        display: inline-block;
+        color: var(--rosa);
+        transition: color 0.4s ease;
+        }
+
+   .intro-text h1:hover span {
+        color: var(--lilas);
+        }
+
+    /* Animação em cascata com delay */
+    .intro-text h1 span:nth-child(1) { transition-delay: 0s; }
+    .intro-text h1 span:nth-child(2) { transition-delay: 0.05s; }
+    .intro-text h1 span:nth-child(3) { transition-delay: 0.1s; }
+    .intro-text h1 span:nth-child(4) { transition-delay: 0.15s; }
+    .intro-text h1 span:nth-child(5) { transition-delay: 0.2s; }
+    .intro-text h1 span:nth-child(6) { transition-delay: 0.25s; }
+    .intro-text h1 span:nth-child(7) { transition-delay: 0.3s; }
+    .intro-text h1 span:nth-child(8) { transition-delay: 0.35s; }
+    .intro-text h1 span:nth-child(9) { transition-delay: 0.4s; }
+    .intro-text h1 span:nth-child(10) { transition-delay: 0.45s; }
+
+    
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border: 4px dotted var(--rosa);
+      border-radius: 50%;
+      background-image: url(minhaimagem.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .projeto {
+      border: 1px solid var(--rosa);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      background-color: #1a1a1a;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.1);
+    }
+
+    .projeto h2 {
+      color: var(--lilas);
+      margin-bottom: 8px;
+      font-size: 1.3em;
+    }
+
+    .projeto p {
+      color: var(--cinza);
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+
+    .projeto a {
+      color: var(--rosa);
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .projeto a:hover {
+      color: var(--roxo);
+    }
+    
+    .form-contato {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        }
+
+    .form-contato label {
+        font-weight: bold;
+        color: var(--lilas);
+        }
+
+    .form-contato input,
+    .form-contato textarea {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid var(--roxo);
+        background-color: #1a1a1a;
+        color: var(--branco);
+        font-size: 1em;
+        }
+
+    .form-contato button {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: var(--rosa);
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--preto);
+        transition: background-color 0.3s;
+        }
+
+    .form-contato button:hover {
+        background-color: var(--roxo);
+        color: var(--branco);
+        }
+
+/* responsividade para telas menores*/
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        text-align: center;
+      }
+
+   
+      .avatar {
+        width: 160px;
+        height: 160px;
+      }
+    }

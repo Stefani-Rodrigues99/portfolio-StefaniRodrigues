@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stefani Rodrigues - Portfólio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--css externo-->
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <header>
+    <div class="logo">SR</div>
+    <nav>
+      <a onclick="mostrar('sobre')">Sobre</a>
+      <a onclick="mostrar('formacao')">Formação</a>
+      <a onclick="mostrar('portfolio')">Portfólio</a>
+      <a onclick="mostrar('contato')">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+   <!--conteúdo dinâmico que será trocado com Js , sem trocar de página ao invés de criar tudo com HTML-->
+    <div class="intro-text" id="conteudo">
+      <h1>
+        Olá! Eu sou <span>S</span><span>t</span><span>e</span><span>f</span><span>a</span><span>n</span><span>i</span>
+      </h1>
+        <p>Meu nome é <strong>Stefani Rodrigues</strong>, sou formada em Enfermagem e atualmente estou embarcando em uma nova jornada profissional na área de tecnologia. Hoje estou cursando Análise e Desenvolvimento de Sistemas com o objetivo de me tornar uma desenvolvedora front-end.</p>
+        <br>
+        <p>Essa transição de carreira nasceu da vontade de buscar mais liberdade criativa, flexibilidade de horários e melhores oportunidades. Tenho como inspiração o meu noivo, que já atua na área e tem sido meu maior apoiador durante esse processo de aprendizado.</p>
+        <br>
+        <p>Fora do mundo da programação, adoro momentos simples: assistir séries, cozinhar, ouvir músicas e de conhecer lugares novos.</p>
+        <br>
+              
+    </div>
+  <!--imagem de perfil das páginas-->
+    <div class="avatar" title="Minha imagem"></div>
+  </main>
+
+  <footer>
+    &copy; 2025 • Desenvolvido por Stefani Rodrigues 
+  </footer>
+
+  <script>
+    function mostrar(secao) {
+      const conteudo = document.getElementById('conteudo');
+
+      if (secao === 'sobre') {
+        conteudo.innerHTML = `
+           <h1>
+        Olá! Eu sou <span>S</span><span>t</span><span>e</span><span>f</span><span>a</span><span>n</span><span>i</span>
+      </h1>
+        <p>Meu nome é <strong>Stefani Rodrigues</strong>, sou formada em Enfermagem e atualmente estou embarcando em uma nova jornada profissional na área de tecnologia. Hoje estou cursando Análise e Desenvolvimento de Sistemas com o objetivo de me tornar uma desenvolvedora front-end.</p>
+        <br>
+        <p>Essa transição de carreira nasceu da vontade de buscar mais liberdade criativa, flexibilidade de horários e melhores oportunidades. Tenho como inspiração o meu noivo, que já atua na área e tem sido meu maior apoiador durante esse processo de aprendizado.</p>
+        <br>
+        <p>Fora do mundo da programação, adoro momentos simples: assistir séries, cozinhar, ouvir músicas e de conhecer lugares novos.</p>
+        <br>
+          
+        `;
+      } else if (secao === 'formacao') {
+        conteudo.innerHTML = `
+          <h1>Minha Formação</h1>
+          <p>Sou formada em Enfermagem desde 2023 e atualmente trabalho em um UTI e curso Análise e Desenvolvimento de Sistemas. </p>
+        `;
+      } else if (secao === 'portfolio') {
+        conteudo.innerHTML = `
+          <h1>Portfólio</h1>
+          <p>Aqui estão alguns dos meus projetos desenvolvidos com HTML e CSS:</p>
+
+            <div class="projeto">
+              <br>
+              <h2>Mini Projeto</h2>
+              <br>
+              <p>Um site simples com layout responsivo para exibir notícias da banda BTS com HTML5 e CSS3.</p>
+              <a href="https://github.com/Stefani-Rodrigues99/html-css/tree/main/desafios/desafio%20mini%20projeto%2010" target="_blank">Ver no GitHub →</a>
+            </div>
+            <br>
+            <div class="projeto">
+              <h2>Projeto Aula Prática - Uninter</h2>
+              <p>Um site responsivo de tecnologia realizado na aula prática junto com o professor Giuliano Lanes.</p> <br>
+              <a href="https://github.com/Stefani-Rodrigues99/tecnologica-uninter" target="_blank">Ver no GitHub →</a>
+            </div>
+              <br><br>Em breve você poderá ver aqui mais projetos desenvolvidos. Meus primeiros sites e interfaces estão a caminho!</p>
+        `;
+      } else if (secao === 'contato') {
+        conteudo.innerHTML = `
+          <h1>Contato</h1>
+          <p>Entre em contato comigo pelas minhas redes:</p>
+          <div class="redes">
+            <a href="https://www.instagram.com/ste.crodrigues" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/rodrigues-stefani" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Stefani-Rodrigues99" target="_blank">GitHub</a>
+            <a href="mailto:stefanicrodrigues84@gmail.com" target="_blank">Email</a>
+          </div>
+
+          <form class="form-contato" onsubmit="enviarMensagem(event)">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+          </form>          
+        `;
+      }
+    }
+     function enviarMensagem(event) {
+  event.preventDefault(); // Evita recarregar a página
+
+  const nome = document.getElementById('nome').value;
+  const mensagem = document.getElementById('mensagem').value;
+
+  alert(`Obrigado, ${nome}! Sua mensagem foi recebida:\n"${mensagem}"`);
+
+  // Limpa o formulário
+  document.getElementById('nome').value = '';
+  document.getElementById('mensagem').value = '';
+}
+  </script>
+</body>
+</html>
